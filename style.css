@@ -5,12 +5,148 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+/* css variable */
+:root{
+    --primaryColor:orange;
+    --mainWhite:#fff;
+    --offWhite:#f7f7f7;
+    --mainBlack:#222;
+    --mainGrey:#ececec;
+    --darkGrey:#afafaf;
+    --mainTransition:all .3s linear;
+    --mainSpacing:.25rem;
+    --lightShadow:2px 5px 3px rgba(0,0,0,.25);
+    --darkShadow:4px 10px 6px rgba(0,0,0,.5);
+}
 body{
     font-family: 'Lato',
     sans-serif;
+    line-height: 1.4;
+    font-size: 1rem;
+    color: var(--mainBlack);
+    background: var(--offWhite);
+}
+
+/* global style */
+img{
+    width: 100%;
+    display: block;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6{
     font-family: 'Poppins',
     sans-serif;
+    letter-spacing: var(--mainSpacing);
+    margin-bottom: 1.2rem;
 }
+h1{
+    font-size: 3.3rem;
+}
+h2{
+    font-size: 2.3rem;
+}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 1.2rem;
+}
+
+p{
+    margin-bottom: 1.2rem;
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* header */
+    /* banner section  start*/
+    .header-banner{
+        min-height: 100vh;
+        background: var(--primaryColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .banner-content{
+        text-align: center;
+        color: var(--mainWhite);
+        padding: 0 2rem;
+    }
+    .banner-title{
+        text-transform: uppercase;
+    }
+    .banner-text{
+        font-weight: 400;
+        letter-spacing: var(--mainSpacing);
+    }
+    .btn-link {
+        text-transform: capitalize;
+        color: var(--mainWhite);
+        letter-spacing: var(--mainSpacing);
+        border: 2px solid var(--mainWhite);
+        transition: var(--mainTransition);
+        padding: 0.9rem 1.6rem;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .btn-link::after{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: -100%;
+        background: var(--mainWhite);
+        transition: var(--mainTransition);
+        z-index: -1;
+        visibility: hidden;
+    }
+    .btn-link:hover::after{
+        left: 0;
+        visibility: visible;
+    }
+    .btn-link:hover{
+        color: var(--primaryColor);
+    }
+    /* banner section  end*/
+
+    /* media  query start*/
+    @media screen and (min-width:768px){
+        .header-banner{
+            background:linear-gradient(0deg, rgba(50, 0, 0, 0.5), rgba(50, 0, 0, 0.5)),
+            url(./images/banner.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        .banner-title{
+            font-size: 4.5rem;
+        }
+    }
+    /* media  query end*/
+/* end of header */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
